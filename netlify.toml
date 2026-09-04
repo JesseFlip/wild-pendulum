@@ -1,0 +1,45 @@
+# Netlify configuration for the Zero Velocity static site.
+#
+# The site is a pre-built Vite bundle committed under zero-velocity-site/.
+# There is no build step: Netlify just publishes that folder as-is.
+#
+# Without the `publish` key below, Netlify serves the repository root — which
+# has no index.html — and every request returns Netlify's own 404 page.
+
+[build]
+  publish = "zero-velocity-site"
+  command = ""
+
+# The app is a client-side-routed SPA, so unknown paths must fall through to
+# index.html rather than 404. Mirrors zero-velocity-site/_redirects, which is
+# what a drag-and-drop deploy of that folder would use instead of this file.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Header blocks below mirror zero-velocity-site/_headers. Keep the two in sync.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Vite content-hashes these filenames, so they can be cached indefinitely.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/licenses/*"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=604800"
