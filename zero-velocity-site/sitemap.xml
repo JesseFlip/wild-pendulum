@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Replace SITE_URL with your live Netlify domain (or custom domain) after the
-  first deploy, e.g. https://stalking-the-wild-pendulum.netlify.app
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>SITE_URL/</loc><priority>1.0</priority></url>
-  <url><loc>SITE_URL/waves</loc><priority>0.8</priority></url>
-  <url><loc>SITE_URL/pendulum</loc><priority>0.8</priority></url>
-  <url><loc>SITE_URL/hologram</loc><priority>0.8</priority></url>
-  <url><loc>SITE_URL/torus</loc><priority>0.8</priority></url>
-  <url><loc>SITE_URL/challenge</loc><priority>0.6</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/waves</loc><priority>0.8</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/pendulum</loc><priority>0.8</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/hologram</loc><priority>0.8</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/torus</loc><priority>0.8</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/challenge</loc><priority>0.6</priority></url>
+  <url><loc>https://wild-pencil.netlify.app/credits</loc><priority>0.3</priority></url>
 </urlset>
